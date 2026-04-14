@@ -1,51 +1,42 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech News Dashboard</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body { background: #f4f7f6; font-family: 'Pretendard', sans-serif; }
-        .header { background: #1a1a1a; color: white; padding: 2rem 0; margin-bottom: 2rem; }
-        .card { border: none; border-radius: 12px; transition: transform 0.2s; }
-        .card:hover { transform: translateY(-5px); }
-        .badge-media { font-size: 0.8rem; margin-bottom: 0.5rem; display: inline-block; }
-    </style>
-</head>
-<body>
-    <header class="header text-center">
-        <h1>Tech Briefing: Semiconductor & AI</h1>
-        <p>최근 3일 주요 뉴스 요약 (2026.04.12 - 04.14)</p>
-    </header>
-
-    <div class="container">
-        <div class="row g-4" id="news-list">
-            </div>
-    </div>
-
-    <script>
-        const news = [
-            { media: "전자신문", title: "일본 반도체 공급망 재편 공세, 1703억 규모 투자", desc: "공급망 재편 틈타 80년대 반도체 영광 재구축 시도.", category: "Semiconductor" },
-            { media: "디지털타임스", title: "K-메모리 쟁탈전, 내년 상반기까지 호황", desc: "한국은행, AI 수요 기반 반도체 슈퍼사이클 지속 전망.", category: "AI/IT" },
-            { media: "NYT Tech", title: "U.S. Data Centers shifting to Rural Areas", desc: "전력 및 부지 확보를 위해 남부와 중서부로 대거 이동 중.", category: "IT" },
-            { media: "IEEE Spectrum", title: "Japanese Tech Giants launch Physical AI JV", desc: "소프트뱅크·소니·혼다, 로봇용 거대 AI 모델 공동 개발.", category: "AI/Robotics" }
-        ];
-
-        const container = document.getElementById('news-list');
-        news.forEach(item => {
-            container.innerHTML += `
-                <div class="col-md-6">
-                    <div class="card shadow-sm h-100">
-                        <div class="card-body">
-                            <span class="badge bg-primary badge-media">${item.media}</span>
-                            <h5 class="card-title fw-bold">${item.title}</h5>
-                            <p class="card-text text-muted">${item.desc}</p>
-                            <span class="text-secondary small"># ${item.category}</span>
-                        </div>
-                    </div>
-                </div>`;
-        });
-    </script>
-</body>
-</html>
+const newsData = [
+        {
+            media: "전자신문",
+            title: "K-반도체, AI 메모리 주도권 확보 위해 HBM4 조기 양산",
+            desc: "삼성전자와 SK하이닉스가 엔비디아 공급망 선점을 위해 차세대 HBM 개발 속도를 높이고 있습니다.",
+            link: "https://www.etnews.com/20260414000123", // 예시 기사 번호
+            category: "반도체",
+            bg: "primary"
+        },
+        {
+            media: "디지털타임스",
+            title: "한은 '반도체 경기, 내년까지 슈퍼사이클 지속'",
+            desc: "AI 서버 투자 확대로 인한 메모리 수요가 한국 수출의 견인차 역할을 할 것으로 분석되었습니다.",
+            link: "http://www.dt.co.kr/contents.html?article_no=202604140210991",
+            category: "IT/경제",
+            bg: "success"
+        },
+        {
+            media: "인공지능신문",
+            title: "오픈AI, 아시아태평양 본부 일본에 설립... 한국 시장 영향은?",
+            desc: "도쿄에 첫 아시아 거점을 마련하며 한국을 포함한 아시아권 AI 생태계 확장에 나섭니다.",
+            link: "https://www.aitimes.kr/news/articleView.html?idxno=31245",
+            category: "AI",
+            bg: "info"
+        },
+        {
+            media: "The New York Times",
+            title: "Tech Giants Race to Secure Nuclear Power for AI",
+            desc: "데이터 센터의 엄청난 전력 소모를 감당하기 위해 MS, 구글 등이 원자력 에너지 확보에 열을 올리고 있습니다.",
+            link: "https://www.nytimes.com/2026/04/13/technology/ai-data-centers-nuclear-energy.html",
+            category: "IT/Science",
+            bg: "dark"
+        },
+        {
+            media: "IEEE Spectrum",
+            title: "The Rise of Humanoid Robots in Manufacturing",
+            desc: "테슬라 옵티머스 등 인간형 로봇이 실제 공정 라인에 투입되기 시작한 기술적 배경을 분석합니다.",
+            link: "https://spectrum.ieee.org/humanoid-robots-factory",
+            category: "Robot/AI",
+            bg: "warning"
+        }
+    ];
