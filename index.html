@@ -1,42 +1,79 @@
-const newsData = [
-        {
-            media: "전자신문",
-            title: "K-반도체, AI 메모리 주도권 확보 위해 HBM4 조기 양산",
-            desc: "삼성전자와 SK하이닉스가 엔비디아 공급망 선점을 위해 차세대 HBM 개발 속도를 높이고 있습니다.",
-            link: "https://www.etnews.com/20260414000123", // 예시 기사 번호
-            category: "반도체",
-            bg: "primary"
-        },
-        {
-            media: "디지털타임스",
-            title: "한은 '반도체 경기, 내년까지 슈퍼사이클 지속'",
-            desc: "AI 서버 투자 확대로 인한 메모리 수요가 한국 수출의 견인차 역할을 할 것으로 분석되었습니다.",
-            link: "http://www.dt.co.kr/contents.html?article_no=202604140210991",
-            category: "IT/경제",
-            bg: "success"
-        },
-        {
-            media: "인공지능신문",
-            title: "오픈AI, 아시아태평양 본부 일본에 설립... 한국 시장 영향은?",
-            desc: "도쿄에 첫 아시아 거점을 마련하며 한국을 포함한 아시아권 AI 생태계 확장에 나섭니다.",
-            link: "https://www.aitimes.kr/news/articleView.html?idxno=31245",
-            category: "AI",
-            bg: "info"
-        },
-        {
-            media: "The New York Times",
-            title: "Tech Giants Race to Secure Nuclear Power for AI",
-            desc: "데이터 센터의 엄청난 전력 소모를 감당하기 위해 MS, 구글 등이 원자력 에너지 확보에 열을 올리고 있습니다.",
-            link: "https://www.nytimes.com/2026/04/13/technology/ai-data-centers-nuclear-energy.html",
-            category: "IT/Science",
-            bg: "dark"
-        },
-        {
-            media: "IEEE Spectrum",
-            title: "The Rise of Humanoid Robots in Manufacturing",
-            desc: "테슬라 옵티머스 등 인간형 로봇이 실제 공정 라인에 투입되기 시작한 기술적 배경을 분석합니다.",
-            link: "https://spectrum.ieee.org/humanoid-robots-factory",
-            category: "Robot/AI",
-            bg: "warning"
-        }
-    ];
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech News Briefing</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background: #f4f7f6; font-family: sans-serif; padding-bottom: 50px; }
+        .header { background: #1a1a1a; color: white; padding: 40px 0; text-align: center; margin-bottom: 30px; }
+        .card { border: none; border-radius: 12px; height: 100%; transition: 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .card:hover { transform: translateY(-5px); }
+        .btn-link { text-decoration: none; font-weight: bold; border-radius: 8px; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Tech News Dashboard</h1>
+        <p>반도체 · AI · IT 최근 3일 주요 소식</p>
+    </header>
+
+    <div class="container">
+        <div class="row g-4" id="news-container">
+            </div>
+    </div>
+
+    <script>
+        const newsData = [
+            {
+                media: "전자신문",
+                title: "차세대 AI 반도체 선점 경쟁 가속",
+                link: "https://www.etnews.com/",
+                desc: "HBM4 양산 계획 및 국내 기업들의 글로벌 시장 대응 전략 요약."
+            },
+            {
+                media: "디지털타임스",
+                title: "IT 서비스 업계, 생성형 AI 도입 본격화",
+                link: "http://www.dt.co.kr/",
+                desc: "공공 및 금융권의 클라우드 전환과 맞물린 AI 솔루션 보급 현황."
+            },
+            {
+                media: "인공지능신문",
+                title: "글로벌 AI 컨퍼런스 주요 발표 내용",
+                link: "https://www.aitimes.kr/",
+                desc: "새로운 멀티모달 모델들의 성능 지표와 상용화 가능성 분석."
+            },
+            {
+                media: "NY Times",
+                title: "Inside the AI Chip Arms Race",
+                link: "https://www.nytimes.com/section/technology",
+                desc: "빅테크 기업들의 자체 칩 설계 열풍과 공급망 변화 취재."
+            },
+            {
+                media: "IEEE Spectrum",
+                title: "Computing's Energy Challenge",
+                link: "https://spectrum.ieee.org/",
+                desc: "AI 연산에 필요한 전력 소모를 줄이기 위한 하드웨어 혁신 기술들."
+            }
+        ];
+
+        const container = document.getElementById('news-container');
+        newsData.forEach(item => {
+            container.innerHTML += `
+                <div class="col-md-6 col-lg-4">
+                    <div class="card p-3">
+                        <div class="card-body d-flex flex-column">
+                            <span class="badge bg-dark mb-2" style="width: fit-content;">${item.media}</span>
+                            <h5 class="card-title fw-bold">${item.title}</h5>
+                            <p class="card-text text-muted small">${item.desc}</p>
+                            <div class="mt-auto">
+                                <a href="${item.link}" target="_blank" class="btn btn-primary btn-link w-100">기사 원문 읽기</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>`;
+        });
+    </script>
+</body>
+</html>
