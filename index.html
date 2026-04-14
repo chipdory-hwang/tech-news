@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech News Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background: #f4f7f6; font-family: 'Pretendard', sans-serif; }
+        .header { background: #1a1a1a; color: white; padding: 2rem 0; margin-bottom: 2rem; }
+        .card { border: none; border-radius: 12px; transition: transform 0.2s; }
+        .card:hover { transform: translateY(-5px); }
+        .badge-media { font-size: 0.8rem; margin-bottom: 0.5rem; display: inline-block; }
+    </style>
+</head>
+<body>
+    <header class="header text-center">
+        <h1>Tech Briefing: Semiconductor & AI</h1>
+        <p>최근 3일 주요 뉴스 요약 (2026.04.12 - 04.14)</p>
+    </header>
+
+    <div class="container">
+        <div class="row g-4" id="news-list">
+            </div>
+    </div>
+
+    <script>
+        const news = [
+            { media: "전자신문", title: "일본 반도체 공급망 재편 공세, 1703억 규모 투자", desc: "공급망 재편 틈타 80년대 반도체 영광 재구축 시도.", category: "Semiconductor" },
+            { media: "디지털타임스", title: "K-메모리 쟁탈전, 내년 상반기까지 호황", desc: "한국은행, AI 수요 기반 반도체 슈퍼사이클 지속 전망.", category: "AI/IT" },
+            { media: "NYT Tech", title: "U.S. Data Centers shifting to Rural Areas", desc: "전력 및 부지 확보를 위해 남부와 중서부로 대거 이동 중.", category: "IT" },
+            { media: "IEEE Spectrum", title: "Japanese Tech Giants launch Physical AI JV", desc: "소프트뱅크·소니·혼다, 로봇용 거대 AI 모델 공동 개발.", category: "AI/Robotics" }
+        ];
+
+        const container = document.getElementById('news-list');
+        news.forEach(item => {
+            container.innerHTML += `
+                <div class="col-md-6">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-body">
+                            <span class="badge bg-primary badge-media">${item.media}</span>
+                            <h5 class="card-title fw-bold">${item.title}</h5>
+                            <p class="card-text text-muted">${item.desc}</p>
+                            <span class="text-secondary small"># ${item.category}</span>
+                        </div>
+                    </div>
+                </div>`;
+        });
+    </script>
+</body>
+</html>
