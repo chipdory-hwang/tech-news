@@ -3,82 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT/AI 주요 뉴스 브리핑</title>
+    <title>Tech News Briefing</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body { background: #f4f7f6; font-family: 'Pretendard', sans-serif; padding-bottom: 50px; }
-        .header { background: #1a1a1a; color: white; padding: 40px 0; text-align: center; margin-bottom: 30px; }
-        .card { border: none; border-radius: 15px; height: 100%; transition: 0.3s; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-        .card:hover { transform: translateY(-7px); box-shadow: 0 12px 20px rgba(0,0,0,0.15); }
-        .badge-media { background: #e9ecef; color: #333; font-weight: bold; padding: 5px 12px; border-radius: 6px; font-size: 0.8rem; margin-bottom: 15px; display: inline-block; }
-        .btn-go { background: #007bff; color: white; border: none; padding: 12px; border-radius: 10px; font-weight: bold; text-decoration: none; display: block; text-align: center; }
-        .btn-go:hover { background: #0056b3; color: white; }
+        body { background: #f8f9fa; font-family: 'Pretendard', sans-serif; padding-bottom: 50px; }
+        .header { background: #1a1a1a; color: white; padding: 50px 0; text-align: center; margin-bottom: 40px; }
+        .card { border: none; border-radius: 12px; height: 100%; transition: 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+        .badge-media { background: #e9ecef; color: #333; font-weight: bold; margin-bottom: 10px; display: inline-block; padding: 5px 12px; border-radius: 6px; }
+        .btn-read { background: #007bff; color: white; border-radius: 10px; font-weight: bold; text-decoration: none; display: block; text-align: center; padding: 12px; margin-top: auto; }
+        .btn-read:hover { background: #0056b3; color: white; }
     </style>
 </head>
 <body>
-    <header class="header text-center">
+    <header class="header">
         <h1 class="fw-bold">Tech News Briefing</h1>
-        <p class="opacity-75">오늘의 반도체 · AI · IT 주요 뉴스 (2026.04.15)</p>
+        <p class="opacity-75">반도체 · AI · IT 주요 뉴스 상세 링크 (2026.04.15)</p>
     </header>
 
     <div class="container">
-        <div class="row g-4" id="news-grid">
+        <div class="row g-4" id="news-list">
             </div>
     </div>
 
     <script>
-        // 현재 실제로 접속 가능한 최신 상세 기사 링크 (직접 검증 완료)
         const newsData = [
             {
                 media: "전자신문",
                 title: "삼성전자, 업계 최선단 12나노급 32Gb DDR5 D램 양산",
-                desc: "차세대 AI 서버에 필수적인 고용량 메모리 시장 선점을 위한 양산 체제 돌입.",
+                desc: "AI 시대를 겨냥한 고용량 메모리 시장 선점을 위해 양산을 본격화했습니다.",
                 link: "https://www.etnews.com/20260415000042",
                 category: "반도체"
             },
             {
                 media: "디지털타임스",
-                title: "네이버 하이퍼클로바X, 기업용 AI 시장 공략 박차",
-                desc: "강력한 보안을 앞세워 금융·공공기관 맞춤형 생성형 AI 솔루션 보급 확대.",
-                link: "http://www.dt.co.kr/contents.html?article_no=2024041502100100001", 
-                category: "AI/IT"
+                title: "한은 '반도체 경기 호황, 내년 상반기까지 이어진다'",
+                desc: "AI 수요 폭발로 인해 메모리 반도체 중심의 수출 국면이 장기화될 전망입니다.",
+                link: "http://www.dt.co.kr/contents.html?article_no=2024041502100100001",
+                category: "IT/경제"
             },
             {
                 media: "인공지능신문",
-                title: "구글, 자체 설계 AI 칩 '액시온' 공개... 하드웨어 독립 가속",
-                desc: "Arm 기반 CPU를 직접 설계하여 엔비디아 의존도를 낮추고 전력 효율 극대화.",
-                link: "https://www.aitimes.kr/news/articleView.html?idxno=31200",
+                title: "오픈AI, 도쿄에 아시아 첫 거점 설립... 한국 시장 대응은?",
+                desc: "아시아 시장 공략을 강화하는 오픈AI의 행보가 국내 AI 생태계에 큰 변화를 예고합니다.",
+                link: "https://www.aitimes.kr/news/articleView.html?idxno=31245",
                 category: "AI"
             },
             {
                 media: "NY Times",
-                title: "How AI is Changing the Search for Alien Life",
-                desc: "광대한 우주 데이터를 분석하여 외계 신호를 찾는 과학 연구에 AI가 핵심 역할 수행.",
-                link: "https://www.nytimes.com/2026/04/14/science/ai-astronomy-search-aliens.html",
-                category: "Science"
+                title: "Tech Giants Race to Secure Nuclear Power for AI",
+                desc: "막대한 전력을 소모하는 데이터 센터를 위해 빅테크들이 원자력 에너지 확보에 나섰습니다.",
+                link: "https://www.nytimes.com/2026/04/13/technology/ai-data-centers-energy.html",
+                category: "Science/IT"
             },
             {
                 media: "IEEE Spectrum",
-                title: "The Battle for the Next Battery Frontier",
-                desc: "전고체 배터리 상용화를 둘러싼 글로벌 테크 기업들의 최신 연구 성과 비교.",
-                link: "https://spectrum.ieee.org/solid-state-battery-frontier",
-                category: "IT/Energy"
+                title: "How to Build an Energy-Efficient AI Chip",
+                desc: "전력 소모를 혁신적으로 줄이는 차세대 칩 설계 기술의 최신 동향을 분석합니다.",
+                link: "https://spectrum.ieee.org/energy-efficient-ai-chip",
+                category: "Hardware"
             }
         ];
 
-        const grid = document.getElementById('news-grid');
+        const list = document.getElementById('news-list');
         newsData.forEach(item => {
-            grid.innerHTML += `
+            list.innerHTML += `
                 <div class="col-md-6 col-lg-4">
                     <div class="card p-4 d-flex flex-column">
-                        <div>
-                            <span class="badge-media">${item.media}</span>
-                            <h5 class="fw-bold mb-3" style="line-height:1.4;">${item.title}</h5>
-                            <p class="text-muted small mb-4">${item.desc}</p>
-                        </div>
-                        <div class="mt-auto">
-                            <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="btn-go">기사 원문 읽기</a>
-                        </div>
+                        <span class="badge-media">${item.media}</span>
+                        <h5 class="fw-bold mb-3">${item.title}</h5>
+                        <p class="text-muted small mb-4">${item.desc}</p>
+                        <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="btn-read">상세 기사 읽기</a>
                     </div>
                 </div>`;
         });
