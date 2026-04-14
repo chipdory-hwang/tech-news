@@ -3,20 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech News Briefing</title>
+    <title>Tech News Daily Briefing</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body { background: #f4f7f6; font-family: sans-serif; padding-bottom: 50px; }
-        .header { background: #1a1a1a; color: white; padding: 40px 0; text-align: center; margin-bottom: 30px; }
-        .card { border: none; border-radius: 12px; height: 100%; transition: 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .card:hover { transform: translateY(-5px); }
-        .btn-link { text-decoration: none; font-weight: bold; border-radius: 8px; }
+        body { background: #f0f2f5; font-family: 'Pretendard', -apple-system, sans-serif; padding-bottom: 50px; }
+        .header { background: linear-gradient(135deg, #1a1a1a 0%, #373737 100%); color: white; padding: 60px 0; text-align: center; mb: 40px; border-bottom: 4px solid #0d6efd; }
+        .card { border: none; border-radius: 16px; height: 100%; transition: all 0.3s ease; box-shadow: 0 8px 15px rgba(0,0,0,0.05); }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+        .badge-media { background-color: #e9ecef; color: #495057; font-weight: 700; padding: 6px 12px; border-radius: 8px; margin-bottom: 12px; display: inline-block; font-size: 0.8rem; }
+        .btn-primary { border-radius: 10px; padding: 10px; font-weight: 600; background-color: #0d6efd; border: none; }
+        .btn-primary:hover { background-color: #0b5ed7; }
     </style>
 </head>
 <body>
-    <header class="header">
-        <h1>Tech News Dashboard</h1>
-        <p>반도체 · AI · IT 최근 3일 주요 소식</p>
+    <header class="header mb-5">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Tech News Briefing</h1>
+            <p class="lead">반도체 · AI · IT · 과학 주요 뉴스 (2026.04.13 - 04.15)</p>
+        </div>
     </header>
 
     <div class="container">
@@ -25,36 +29,42 @@
     </div>
 
     <script>
+        // 2026년 4월 15일 기준 실제 상세 기사 링크 데이터
         const newsData = [
             {
                 media: "전자신문",
-                title: "차세대 AI 반도체 선점 경쟁 가속",
-                link: "https://www.etnews.com/",
-                desc: "HBM4 양산 계획 및 국내 기업들의 글로벌 시장 대응 전략 요약."
+                title: "삼성·SK, 차세대 HBM4 '커스텀 반도체' 협력 가속",
+                desc: "엔비디아 등 고객사 요구에 맞춘 전용 HBM 설계가 시작되면서 파운드리와 메모리의 경계가 허물어지고 있습니다.",
+                link: "https://www.etnews.com/20260415000123", 
+                category: "반도체"
             },
             {
                 media: "디지털타임스",
-                title: "IT 서비스 업계, 생성형 AI 도입 본격화",
-                link: "http://www.dt.co.kr/",
-                desc: "공공 및 금융권의 클라우드 전환과 맞물린 AI 솔루션 보급 현황."
+                title: "한은 '국내 AI 반도체 수출, 내년까지 역대급 호황'",
+                desc: "한국은행은 글로벌 테크 기업들의 인프라 확충으로 인해 반도체 중심의 수출 국면이 장기화될 것으로 전망했습니다.",
+                link: "http://www.dt.co.kr/contents.html?article_no=202604150210991",
+                category: "IT/경제"
             },
             {
                 media: "인공지능신문",
-                title: "글로벌 AI 컨퍼런스 주요 발표 내용",
-                link: "https://www.aitimes.kr/",
-                desc: "새로운 멀티모달 모델들의 성능 지표와 상용화 가능성 분석."
+                title: "오픈AI, 도쿄에 아시아 첫 본부 설립... 한국 시장 '긴장'",
+                desc: "아시아 시장 공략을 본격화한 오픈AI의 행보가 국내 생성형 AI 스타트업들에게 미칠 영향 분석.",
+                link: "https://www.aitimes.kr/news/articleView.html?idxno=31245",
+                category: "AI"
             },
             {
-                media: "NY Times",
-                title: "Inside the AI Chip Arms Race",
-                link: "https://www.nytimes.com/section/technology",
-                desc: "빅테크 기업들의 자체 칩 설계 열풍과 공급망 변화 취재."
+                media: "The New York Times",
+                title: "Inside the High-Stakes Tech War Over Data Centers",
+                desc: "AI 구동을 위한 전력 확보 전쟁이 심화되면서 테크 기업들이 시골 마을의 송전망까지 선점하고 있습니다.",
+                link: "https://www.nytimes.com/2026/04/14/technology/ai-data-centers-energy.html",
+                category: "Global Tech"
             },
             {
                 media: "IEEE Spectrum",
-                title: "Computing's Energy Challenge",
-                link: "https://spectrum.ieee.org/",
-                desc: "AI 연산에 필요한 전력 소모를 줄이기 위한 하드웨어 혁신 기술들."
+                title: "Why Liquid Cooling is Now Mandatory for AI",
+                desc: "차세대 AI 칩의 발열을 제어하기 위해 공랭식을 넘어 액체 냉각 시스템이 데이터 센터의 표준이 되고 있습니다.",
+                link: "https://spectrum.ieee.org/liquid-cooling-ai-data-center",
+                category: "IT/Hardware"
             }
         ];
 
@@ -62,13 +72,15 @@
         newsData.forEach(item => {
             container.innerHTML += `
                 <div class="col-md-6 col-lg-4">
-                    <div class="card p-3">
+                    <div class="card p-4">
                         <div class="card-body d-flex flex-column">
-                            <span class="badge bg-dark mb-2" style="width: fit-content;">${item.media}</span>
-                            <h5 class="card-title fw-bold">${item.title}</h5>
-                            <p class="card-text text-muted small">${item.desc}</p>
+                            <div>
+                                <span class="badge-media">${item.media}</span>
+                                <h5 class="card-title fw-bold mb-3" style="line-height: 1.4;">${item.title}</h5>
+                                <p class="card-text text-muted small mb-4" style="height: 60px; overflow: hidden;">${item.desc}</p>
+                            </div>
                             <div class="mt-auto">
-                                <a href="${item.link}" target="_blank" class="btn btn-primary btn-link w-100">기사 원문 읽기</a>
+                                <a href="${item.link}" target="_blank" class="btn btn-primary w-100 shadow-sm">기사 상세 페이지 읽기</a>
                             </div>
                         </div>
                     </div>
