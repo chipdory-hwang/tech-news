@@ -3,68 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT/AI/반도체 주요 뉴스 브리핑</title>
+    <title>Daily Tech Intelligence Report</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        :root { --primary-color: #1a1a1a; --accent-color: #0d6efd; }
-        body { background: #f8f9fa; font-family: 'Pretendard', -apple-system, sans-serif; word-break: keep-all; }
+        :root { --primary-dark: #1a1a1a; --accent-blue: #0d6efd; --text-gray: #555; }
+        body { background: #f4f7f6; font-family: 'Pretendard', -apple-system, sans-serif; word-break: keep-all; }
         
-        /* 헤더 스타일 */
-        .header { text-align: center; padding: 40px 20px; background: white; border-bottom: 1px solid #eee; margin-bottom: 30px; }
-        .header h1 { font-weight: 800; font-size: 1.8rem; color: var(--primary-color); margin-bottom: 10px; }
-        .designer { font-size: 1rem; color: #555; font-weight: 500; margin-bottom: 15px; }
-        .header p { font-size: 0.95rem; color: #777; line-height: 1.5; }
+        /* 헤더 섹션 */
+        .header { text-align: center; padding: 50px 20px; background: #fff; border-bottom: 2px solid #eee; margin-bottom: 30px; }
+        .header h1 { font-weight: 800; font-size: 2rem; color: var(--primary-dark); margin-bottom: 8px; }
+        .designer { font-size: 1.1rem; color: var(--accent-blue); font-weight: 600; margin-bottom: 15px; letter-spacing: 0.5px; }
+        .header p { font-size: 0.95rem; color: #777; line-height: 1.6; max-width: 600px; margin: 0 auto; }
 
-        /* PC 버전 표 스타일 */
-        .desktop-table { display: block; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        /* 테이블 (PC) */
+        .desktop-view { display: block; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
         table { width: 100%; border-collapse: collapse; }
-        thead { background: var(--primary-color); color: white; }
-        th, td { padding: 15px; text-align: left; border-bottom: 1px solid #eee; }
-        .col-no { width: 50px; text-align: center; }
-        .col-media { width: 120px; text-align: center; }
+        thead { background: var(--primary-dark); color: #fff; }
+        th, td { padding: 18px; border-bottom: 1px solid #eee; }
         
-        /* 모바일 최적화: 카드 스타일 전환 */
-        @media (max-width: 768px) {
-            .desktop-table { display: none; } /* 표 숨기기 */
-            .mobile-cards { display: block; } /* 카드 보이기 */
+        /* 카드 (모바일) */
+        @media (max-width: 992px) {
+            .desktop-view { display: none; }
+            .mobile-view { display: block; }
             .news-card {
-                background: white;
-                border-radius: 15px;
-                padding: 20px;
-                margin-bottom: 20px;
-                box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-                border-left: 5px solid var(--accent-color);
+                background: #fff; border-radius: 16px; padding: 25px; margin-bottom: 20px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.05); border-top: 6px solid var(--accent-blue);
             }
-            .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
-            .card-no { font-weight: bold; color: #ccc; font-size: 1.2rem; }
-            .card-title { font-size: 1.1rem; font-weight: 700; color: var(--accent-color); margin-bottom: 10px; line-height: 1.4; }
-            .card-desc { font-size: 0.95rem; color: #444; line-height: 1.6; text-align: justify; }
+            .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+            .card-no { font-weight: 900; color: #dee2e6; font-size: 1.5rem; }
+            .badge-media { background: #f8f9fa; color: #333; font-weight: 700; padding: 6px 12px; border-radius: 8px; border: 1px solid #eee; font-size: 0.8rem; }
+            .card-title { font-size: 1.25rem; font-weight: 800; color: #111; margin-bottom: 12px; line-height: 1.4; }
+            .card-desc { font-size: 1rem; color: #444; line-height: 1.7; text-align: justify; }
         }
 
-        /* PC 전용 */
-        @media (min-width: 769px) {
-            .mobile-cards { display: none; }
-        }
-
-        .badge-media { padding: 4px 8px; border-radius: 5px; font-size: 0.75rem; font-weight: bold; background: #eee; }
+        @media (min-width: 993px) { .mobile-view { display: none; } }
     </style>
 </head>
 <body>
 
-<div class="container mt-4">
+<div class="container mt-2">
     <header class="header shadow-sm">
         <h1>Daily Tech Intelligence Report</h1>
         <div class="designer">Designed by chipdory.hwang</div>
-        <p>반도체 · AI · IT · 과학 분야 매체별<br>주요 뉴스 상세 요약 (2026.04.13 - 04.15)</p>
+        <p>반도체 · AI · IT · 과학 분야 매체별<br>핵심 뉴스 15선 상세 요약 (2026.04.13 - 04.15)</p>
     </header>
 
-    <div class="desktop-table shadow">
+    <div class="desktop-view shadow">
         <table>
             <thead>
                 <tr>
-                    <th class="col-no">#</th>
-                    <th class="col-media">매체</th>
-                    <th>제목</th>
+                    <th style="width: 60px; text-align: center;">#</th>
+                    <th style="width: 130px; text-align: center;">매체</th>
+                    <th style="width: 30%;">제목</th>
                     <th>상세 내용 요약</th>
                 </tr>
             </thead>
@@ -72,17 +62,35 @@
         </table>
     </div>
 
-    <div id="mobile-list" class="mobile-cards"></div>
+    <div id="mobile-list" class="mobile-view"></div>
 </div>
 
 <script>
     const newsData = [
-        { media: "전자신문", title: "삼성전자, 12나노급 32Gb DDR5 D램 양산", desc: "세계 최초로 12나노급 공정을 적용한 32Gb DDR5 D램 양산에 성공했습니다. 기존 제품 대비 용량을 2배 늘려 고용량 모듈 제작이 쉬워졌으며, AI 데이터 센터의 효율을 크게 높일 것으로 기대됩니다." },
-        { media: "디지털타임스", title: "한은 '반도체 호황, 내년 상반기까지 지속'", desc: "한국은행 보고서에 따르면 AI 서버 수요가 반도체 수출을 견인하고 있습니다. HBM 가격 상승세와 함께 내년까지 견조한 흑자가 이어질 것으로 분석됩니다." },
-        { media: "인공지능신문", title: "구글, 자체 설계 AI 칩 '액시온' 공개", desc: "기존 x86 대비 성능은 50%, 효율은 60% 향상된 ARM 기반 CPU를 발표했습니다. 이를 통해 엔비디아 의존도를 낮추고 클라우드 비용을 절감할 계획입니다." },
-        { media: "NYT", title: "AI 데이터 센터, 에너지 확보 전쟁 돌입", desc: "막대한 전력을 소모하는 데이터 센터가 미국 시골로 몰리고 있습니다. 빅테크들은 전력 공급을 위해 자체 원자력 발전소 계약까지 검토 중입니다." },
-        { media: "IEEE", title: "6G의 비전: 통신과 AI의 완전한 결합", desc: "네트워크 자체가 연산을 수행하는 '네트워크 컴퓨팅' 시대가 열리고 있습니다. 2030년 상용화를 목표로 글로벌 표준 논의가 시작되었습니다." },
-        // ... (내용이 길어 5개만 샘플로 넣었습니다. 필요시 데이터를 추가하세요)
+        // 전자신문
+        { media: "전자신문", title: "삼성전자, 12나노급 32Gb DDR5 D램 양산", desc: "세계 최초로 12나노급 공정을 적용한 32Gb DDR5 D램 양산에 돌입했습니다. 동일 패키지 크기에서 용량을 2배 늘려 128GB 고용량 모듈 제작이 가능해졌으며, AI 데이터 센터의 전력 효율을 극대화할 핵심 솔루션으로 평가받습니다." },
+        { media: "전자신문", title: "K-반도체 장비업체, '유리기판' 공정 주도권 선점", desc: "차세대 패키징 소재인 유리기판 상용화를 위해 국내 장비사들이 세정 및 노광 장비 국산화에 성공했습니다. 2026년 하반기 본격 양산을 목표로 글로벌 빅테크들과 공급 협의를 진행 중이며, 기판 시장의 게임 체인저가 될 전망입니다." },
+        { media: "전자신문", title: "정부, 국가 AI 컴퓨팅 센터에 5,000억 투입", desc: "AI 경쟁력 강화를 위해 고성능 컴퓨팅 인프라를 현재의 10배 수준으로 확충합니다. 국산 NPU(AI 반도체) 채택 시 인센티브를 부여하여 국내 팹리스 생태계 자생력을 높이고 거대언어모델 학습 비용을 대폭 낮출 계획입니다." },
+        
+        // 디지털타임스
+        { media: "디지털타임스", title: "한은 '반도체 슈퍼사이클, 내년까지 지속'", desc: "한국은행은 최근 반도체 호황이 일시적 현상이 아닌 AI 인프라 투자라는 장기적 흐름에 기반하고 있다고 분석했습니다. 특히 고대역폭메모리(HBM)의 수출 비중이 급증하며 내년 상반기까지 견조한 무역 흑자를 견인할 것으로 보입니다." },
+        { media: "디지털타임스", title: "네이버, 기업용 폐쇄형 AI '하이퍼클로바X' 확산", desc: "보안이 최우선인 금융 및 공공기관을 타겟으로 한 구축형 AI 솔루션이 시장에서 큰 호응을 얻고 있습니다. 사내 데이터를 외부 유출 없이 학습시켜 업무 자동화를 구현함으로써 국내 엔터프라이즈 AI 시장 점유율을 빠르게 높이고 있습니다." },
+        { media: "디지털타임스", title: "통신 3사, AI 에이전트 서비스 유료화 검토", desc: "단순 비서를 넘어 일정 관리, 통역, 예약까지 대행하는 AI 에이전트 서비스가 고도화됨에 따라 통신사들이 수익화 모델을 구체화하고 있습니다. 구독형 멤버십 결합을 통해 정체된 통신 매출의 새로운 돌파구를 마련한다는 전략입니다." },
+
+        // 인공지능신문
+        { media: "인공지능신문", title: "구글, 자체 설계 ARM 기반 CPU '액시온' 공개", desc: "인텔/AMD 의존도를 낮추기 위해 직접 설계한 서버용 CPU 액시온을 발표했습니다. 기존 대비 에너지 효율이 60% 향상되어 구글 클라우드 인프라의 운영 비용을 혁신적으로 절감하고 AI 연산 성능을 최적화하는 데 기여할 것으로 보입니다." },
+        { media: "인공지능신문", title: "오픈AI, 도쿄에 아시아 첫 거점... 일본 특화 모델 개발", desc: "도쿄 법인 설립을 시작으로 아시아 시장 공략을 본격화합니다. 현지 언어와 문화에 최적화된 맞춤형 모델을 제공함으로써 글로벌 지배력을 강화하고 있으며, 이는 한국 등 인접 국가의 AI 생태계에도 큰 영향을 미칠 것으로 예상됩니다." },
+        { media: "인공지능신문", title: "메타, 차세대 AI 추론 칩 'MTIA 2' 실전 배치", desc: "인스타그램 콘텐츠 추천과 광고 최적화에 특화된 자체 AI 가속기 2세대를 투입했습니다. 이전 모델 대비 연산 속도가 3배 향상되었으며, 엔비디아 칩에 대한 의존도를 낮춰 자체 인프라의 독립성을 강화하는 데 주력하고 있습니다." },
+
+        // NYT
+        { media: "NYT", title: "AI 데이터 센터, 미국 시골 마을 전력망 장악", desc: "막대한 전력을 소모하는 데이터 센터가 전력 요금이 저렴한 미국 중서부 농촌 지역으로 대거 이동하고 있습니다. 이로 인해 지역 주민들의 전기료 인상 우려와 송전망 과부하 문제가 대두되며 빅테크와 지역사회 간의 새로운 갈등이 발생하고 있습니다." },
+        { media: "NYT", title: "데이터 고갈 직면한 AI 기업들, 뉴스 저작권 협상 가속", desc: "고품질 학습 데이터가 부족해지자 오픈AI 등 빅테크들이 언론사들과 콘텐츠 사용 계약을 서두르고 있습니다. 저작권 소송 리스크를 피하고 모델의 정확도를 높이기 위한 고육지책으로, 향후 저작권료가 AI 산업의 주요 비용 요소가 될 전망입니다." },
+        { media: "NYT", title: "미 대선 겨냥한 딥페이크 확산... 탐지 기술의 한계", desc: "정교해진 AI 생성 영상이 선거 운동의 도구로 악용되며 유권자 혼란이 가중되고 있습니다. 소셜 미디어 플랫폼들이 차단 정책을 펴고 있으나 생성 속도가 탐지 속도를 압도하고 있어 디지털 워터마크 등 제도적 장치 마련이 시급한 상황입니다." },
+
+        // IEEE Spectrum
+        { media: "IEEE", title: "데이터 센터의 필수가 된 '액체 냉각' 기술 표준화", desc: "차세대 AI 칩의 극심한 발열을 제어하기 위해 공기 냉각 대신 액체 냉각이 표준으로 자리 잡고 있습니다. 칩에 직접 냉각수를 순환시키는 기술을 통해 전력 사용 효율(PUE)을 획기적으로 개선하며 지속 가능한 데이터 센터의 대안으로 부상했습니다." },
+        { media: "IEEE", title: "6G 통신: '네트워크가 곧 컴퓨터'가 되는 시대", desc: "단순 전송을 넘어 통신망 자체가 AI 연산을 수행하는 6G 비전이 구체화되고 있습니다. 초저지연을 통해 자율주행과 홀로그램 통신을 완벽히 지원하며, 2030년 상용화를 위한 글로벌 기술 표준 전쟁이 이미 시작되었습니다." },
+        { media: "IEEE", title: "실리콘 한계 넘는 탄소 나노튜브 트랜지스터 진화", desc: "나노 공정 한계에 다다른 실리콘 대신 탄소 나노튜브를 이용한 차세대 소자 연구가 성과를 내고 있습니다. 기존보다 전력은 적게 쓰면서 연산 능력은 뛰어난 프로토타입 칩이 성공적으로 제작되어 포스트 실리콘 시대의 서막을 알렸습니다." }
     ];
 
     const pcTbody = document.getElementById('pc-tbody');
@@ -90,21 +98,21 @@
 
     newsData.forEach((item, index) => {
         const no = index + 1;
-        // PC용 행 추가
+        // PC
         pcTbody.innerHTML += `
             <tr>
-                <td class="col-no">${no}</td>
-                <td class="col-media"><span class="badge-media">${item.media}</span></td>
-                <td style="font-weight:bold">${item.title}</td>
-                <td style="font-size:0.95rem">${item.desc}</td>
+                <td style="text-align: center; font-weight: bold; color: #999;">${no}</td>
+                <td style="text-align: center;"><span style="padding: 4px 10px; border-radius: 6px; background: #eee; font-size: 0.8rem; font-weight: bold;">${item.media}</span></td>
+                <td style="font-weight: 700; color: var(--accent-blue);">${item.title}</td>
+                <td style="font-size: 0.95rem; color: #444; line-height: 1.6;">${item.desc}</td>
             </tr>`;
         
-        // 모바일용 카드 추가
+        // 모바일
         mobileList.innerHTML += `
             <div class="news-card">
-                <div class="card-meta">
+                <div class="card-header">
                     <span class="badge-media">${item.media}</span>
-                    <span class="card-no">#${no}</span>
+                    <span class="card-no">${no < 10 ? '0' + no : no}</span>
                 </div>
                 <div class="card-title">${item.title}</div>
                 <div class="card-desc">${item.desc}</div>
